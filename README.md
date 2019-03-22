@@ -15,8 +15,6 @@
 - *TryHackMe.com*
   - Hosted currently as a free room! Recommended for beginners.
   - Link: https://tryhackme.com/room/blue
-- *Vulnhub.com*
-  - Coming soon!
 
 ***Special Notes:***
 
