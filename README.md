@@ -2,7 +2,7 @@
 
 # Windows 7 Capture the Flag
 
-
+![alt text](https://i.imgur.com/VO2P4Tm.gif)
 
 **Source:** DarkStar7471 aka J0n
 
