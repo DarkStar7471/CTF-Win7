@@ -71,14 +71,18 @@
   - ![alt text](https://i.imgur.com/yBEAqpV.png)
 - We'll go ahead and background this shell since we've confirmed that we have elevated permissions. Let's get ready to dump any password hashes on the system.
 - First, let's list all of the processes running on the system. Just because we have system level privileges doesn't mean our process does! We'll have to migrate to a new process that does have those permissions
-  - ps
+  - ![alt text](https://i.imgur.com/OoafyEJ.jpg)
 - Look for a process running as nt authority\system from this list generated
   - Good candidates here are powershell and cmd or programs such as word that may have been left running on this system
 - Once a process is found, type migrate PROCESSID, where PROCESSID is the id of the process we are migrating to (left column of the ps table generated previously)
   - This migration process may fail, migrating processes is only successful realistically about 25% of the time.
+  - ![alt text](https://i.imgur.com/rSBRzLz.jpg)
 - Once you control a higher-privileged process, type hashdump
+  - ![alt text](https://i.imgur.com/wq07Eh6.jpg)
   - This will display the password hashes stored in the SAM database of the unit 
   - This password can be copied to text file and cracked. The specific one in use at the time of writing is within rockyou.txt
+  - ![alt text](https://i.imgur.com/8yxFAk1.jpg)
+  - Hash file created and hashes copied in. File name is arbitrary here. 
 - Look for the three flags spread throughout the system!
 
 
@@ -94,5 +98,8 @@
 ​	Three spread throughout the system in the following locations:
 
 1. The root of the C drive, meant to represent initial contact with the system and a good sanity check for pen testers.
+   1. ![alt text](https://i.imgur.com/7Lxd89R.jpg)
 2. C:\Windows\System32\config, this is the actual location of the SAM database
+   1. ![alt text](https://i.imgur.com/8QtrJb6.jpg)
 3. Admin's (Jon's) documents folder, elevated user's and staff documents can be very useful in prolonged engagements.
+   1. ![alt text](https://i.imgur.com/cHfepkx.jpg)
